@@ -61,3 +61,31 @@
     text-decoration: underline;
 }
 
+.admin-signup {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 14px;
+    color: #666;
+}
+
+.admin-signup button {
+    border: none;
+    background: none;
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+}
+
+.admin-signup button:hover {
+    text-decoration: underline;
+}
+

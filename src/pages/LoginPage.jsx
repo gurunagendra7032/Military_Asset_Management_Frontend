@@ -91,6 +91,13 @@ export default function LoginPage() {
                     <p onClick={()=> navigate("/signup")}> are you new Logistic_Officer ?</p>
                     <p onClick={()=> navigate("/base/signup")}> are you new Base_Commander ?</p>
 
+                    <div className="admin-signup">
+                        <span>Are you an Admin?</span>
+                        <button onClick={() => navigate("/admin/signup")}>
+                            Admin Signup
+                        </button>
+                    </div>
+
                 </div>
 
             </div>
