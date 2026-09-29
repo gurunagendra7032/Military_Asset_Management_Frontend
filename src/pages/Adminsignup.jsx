@@ -16,7 +16,7 @@ export default function Adminsignup() {
             const response = await fetch(
                 "https://military-asset-management-system-1-0ldl.onrender.com/admin/signup",
                 {
-                    method: "POST",
+                    method:"POST",
                     headers: {
                         "Content-Type": "application/json"
                     },
@@ -29,10 +29,6 @@ export default function Adminsignup() {
             );
 
             if (response.ok) {
-
-                const data = await response.json();
-
-                localStorage.setItem("token", data.token);
 
                 navigate("/login");
 
