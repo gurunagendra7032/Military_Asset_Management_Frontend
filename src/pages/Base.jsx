@@ -11,7 +11,7 @@ function Base() {
           method:"POST",
           headers:{
             "Content-Type": "application/json",
-            "Autorization":`Bearer ${localStorage.getItem("token")}`
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
           },
           body:JSON.stringify({
             baseName:name,
