@@ -1,0 +1,45 @@
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+.Transfer {
+    width: 400px;
+    margin: 50px auto;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.Transfer select,
+.Transfer input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.Transfer select:focus,
+.Transfer input:focus {
+    outline: none;
+    border-color: #333;
+}
+
+.Transfer button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Transfer button:hover {
+    background-color: #555;
+}
