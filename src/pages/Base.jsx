@@ -1,32 +1,45 @@
-import { useState } from 'react'
-import './Base.css'
+import { useState } from 'react';
+import './Base.css';
 import { useNavigate } from 'react-router-dom';
+
 function Base() {
 
     const [name, setName] = useState("");
     const [location, setLocation] = useState("");
 
-    const navigate=useNavigate();
-    async function submitDetails() {
-        const res=await fetch("https://military-asset-management-system-1-0ldl.onrender.com/save/base",{
-          method:"POST",
-          headers:{
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${localStorage.getItem("token")}`
-          },
-          body:JSON.stringify({
-            baseName:name,
-            baseLocation:location
-          })
-        })
-        console.log(res);
+    const navigate = useNavigate();
 
-        if(res.ok){
-            navigate("/")
+    async function submitDetails() {
+
+        try {
+            const res = await fetch(
+                "https://military-asset-management-system-1-0ldl.onrender.com/save/base",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${localStorage.getItem("token")}`
+                    },
+                    body: JSON.stringify({
+                        baseName: name,
+                        baseLocation: location
+                    })
+                }
+            );
+
+            console.log(res);
+
+            if (res.ok) {
+                navigate("/");
+            } else {
+                const error = await res.text();
+                console.log("Failed:", error);
+            }
+
+        } catch (error) {
+            console.log("Request error:", error);
         }
     }
-
-    console.log(res)
 
     return (
         <div className="base-container">
@@ -52,7 +65,7 @@ function Base() {
 
             </div>
         </div>
-    )
+    );
 }
 
 export default Base;
