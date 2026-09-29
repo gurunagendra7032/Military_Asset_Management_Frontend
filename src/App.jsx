@@ -11,6 +11,7 @@ import SignUp from './pages/SignUp';
 import BaseCommande from './pages/BaseCommande';
 import Login from './pages/LoginPage';
 import Logistic_Officer from './pages/Officer';
+import Adminsignup from './pages/Adminsignup';
 
 
 
@@ -22,12 +23,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/admin/signup" element={<Adminsignup/>}/>
         <Route path="/base/signup" element={<BaseCommande/>}/>
         <Route path="/signup" element={<SignUp/>}/>
         <Route path="/" element={<Login/>}/>
         <Route path="/dashboard" element={<DashBoard/>}/>
         <Route path="logistic_officer" element={<Logistic_Officer/>}/>
-        <Route path="/bases" element={<Base />} />
+        <Route path="c" element={<Base />} />
         <Route path="/purchase" element={<Purchase />} />
         <Route path="/transfer" element={<Transfer/>}/>
         <Route path="/itemAssign" element={<AssetAssignment/>}/>

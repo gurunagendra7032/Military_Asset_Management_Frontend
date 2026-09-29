@@ -47,6 +47,9 @@ export default function LoginPage() {
             if (payload.role === "BASE_COMMANDER") {
                 navigate("/dashboard");
             }
+            if(payload.role === "ADMIN"){
+                navigate("/bases");
+            }
 
         } catch (error) {
             console.log("Error:", error);
