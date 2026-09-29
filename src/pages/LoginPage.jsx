@@ -102,7 +102,7 @@ export default function LoginPage() {
 
             </div>
 
-            <button onClick={()=>navigate("/admin/signup")}> Are An Admin</button>
+            
 
         </div>
 
