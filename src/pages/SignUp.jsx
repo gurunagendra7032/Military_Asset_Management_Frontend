@@ -21,7 +21,7 @@ function SignUp() {
                 name: name,
                 email: email,
                 password: password,
-                baseId: baseId
+                baseId: Number(baseId)
             })
         });
         if(response.ok){
