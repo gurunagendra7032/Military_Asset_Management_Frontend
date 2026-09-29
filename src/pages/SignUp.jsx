@@ -12,7 +12,7 @@ function SignUp() {
     const navigate=useNavigate();
 
     async function submit() {
-        const response = await fetch("http://localhost:8080/logistic_officer/signup", {
+        const response = await fetch("https://military-asset-management-system-1-0ldl.onrender.com/logistic_officer/signup", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -34,7 +34,7 @@ function SignUp() {
 
 
     useEffect(() => {
-        fetch("http://localhost:8080/get/bases")
+        fetch("https://military-asset-management-system-1-0ldl.onrender.com/get/bases")
             .then(response => response.json())
             .then(data => {
                 console.log(data);

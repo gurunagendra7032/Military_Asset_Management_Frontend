@@ -15,7 +15,7 @@ function Purchase() {
    async function submit(){
 
        const token = localStorage.getItem("token");
-     await fetch("http://localhost:8080/purchase/save",{
+     await fetch("https://military-asset-management-system-1-0ldl.onrender.com/purchase/save",{
         method:"POST",
         headers:{
             "Content-Type":"application/json",
@@ -40,7 +40,7 @@ function Purchase() {
         }
 
         fetch(
-            `http://localhost:8080/purchases/${filterEquipmentType}/${filterDate}`,
+            `https://military-asset-management-system-1-0ldl.onrender.com/purchases/${filterEquipmentType}/${filterDate}`,
             {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`

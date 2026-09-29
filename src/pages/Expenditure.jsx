@@ -18,7 +18,7 @@ function Expenditure() {
 
     async function submit() {
 
-        await fetch("http://localhost:8080/save/expenditure", {
+        await fetch("https://military-asset-management-system-1-0ldl.onrender.com/save/expenditure", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -44,7 +44,7 @@ function Expenditure() {
         }
 
         fetch(
-            `http://localhost:8080/expenditure/${filterEquipmentType}/${filterDate}`,
+            `https://military-asset-management-system-1-0ldl.onrender.com/expenditure/${filterEquipmentType}/${filterDate}`,
             {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`

@@ -3,7 +3,7 @@ import './Transfer.css';
 
 function Transfer() {
 
-    // Transfer form
+
     const [equipment, setEquipment] = useState("");
     const [equipmentName, setEquipmentName] = useState("");
     const [quantity, setQuantity] = useState("");
@@ -12,7 +12,7 @@ function Transfer() {
     const [bases, setBases] = useState([]);
     const [baseId, setBaseId] = useState("");
 
-    // Transfer history
+
     const [transfers, setTransfers] = useState([]);
     const [filterEquipmentType, setFilterEquipmentType] = useState("");
     const [filterDate, setFilterDate] = useState("");
@@ -21,7 +21,7 @@ function Transfer() {
 
         const token = localStorage.getItem("token");
 
-        await fetch("http://localhost:8080/transfer/save", {
+        await fetch("https://military-asset-management-system-1-0ldl.onrender.com/transfer/save", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -38,7 +38,7 @@ function Transfer() {
             }),
         });
 
-        // Refresh history after saving
+        
         getTransfers();
     }
 
@@ -52,7 +52,7 @@ function Transfer() {
         const token = localStorage.getItem("token");
 
         fetch(
-            `http://localhost:8080/transfers/${filterEquipmentType}/${filterDate}`,
+            `https://military-asset-management-system-1-0ldl.onrender.com/transfers/${filterEquipmentType}/${filterDate}`,
             {
                 headers: {
                     "Authorization": `Bearer ${token}`
@@ -69,10 +69,10 @@ function Transfer() {
             });
     }
 
-    // Get bases
+  
     useEffect(() => {
 
-        fetch("http://localhost:8080/get/bases")
+        fetch("https://military-asset-management-system-1-0ldl.onrender.com/get/bases")
             .then(response => response.json())
             .then(data => {
                 setBases(data);

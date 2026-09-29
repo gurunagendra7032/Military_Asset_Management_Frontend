@@ -24,7 +24,7 @@ function DashBoard() {
             return;
         }
 
-        fetch(`http://localhost:8080/openBalance/${equipmentType}/${date}`, {
+        fetch(`https://military-asset-management-system-1-0ldl.onrender.com/openBalance/${equipmentType}/${date}`, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }
@@ -34,7 +34,7 @@ function DashBoard() {
                 setOpeningBalance(data);
             });
 
-        fetch(`http://localhost:8080/closingBalance/${equipmentType}/${date}`, {
+        fetch(`https://military-asset-management-system-1-0ldl.onrender.com/closingBalance/${equipmentType}/${date}`, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }
@@ -44,7 +44,7 @@ function DashBoard() {
                 setClosingBalance(data);
             });
 
-        fetch(`http://localhost:8080/netMovement/${equipmentType}/${date}`, {
+        fetch(`https://military-asset-management-system-1-0ldl.onrender.com/netMovement/${equipmentType}/${date}`, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }
@@ -54,7 +54,7 @@ function DashBoard() {
                 setNet(data);
             });
 
-        fetch(`http://localhost:8080/assignitem/${equipmentType}/${date}`, {
+        fetch(`https://military-asset-management-system-1-0ldl.onrender.com/assignitem/${equipmentType}/${date}`, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }
@@ -64,7 +64,7 @@ function DashBoard() {
                 setAssigned(data);
             });
 
-        fetch(`http://localhost:8080/expend/${equipmentType}/${date}`, {
+        fetch(`https://military-asset-management-system-1-0ldl.onrender.com/expend/${equipmentType}/${date}`, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }

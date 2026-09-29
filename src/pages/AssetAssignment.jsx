@@ -13,7 +13,7 @@ function ItemAssignment() {
 
     const token=localStorage.getItem("token");
 
-    await fetch("http://localhost:8080/save/itemAssignment",{
+    await fetch("https://military-asset-management-system-1-0ldl.onrender.com/itemAssignment",{
       method:"POST",
       headers:{
         "Content-Type":"application/json",
@@ -34,7 +34,7 @@ function ItemAssignment() {
   useEffect(()=>{
 
     const token=localStorage.getItem("token")
-      fetch("http://localhost:8080/items/assign",{
+      fetch("https://military-asset-management-system-1-0ldl.onrender.com/assign",{
         headers:{
           "Authorization": `Bearer ${localStorage.getItem("token")}`
         }

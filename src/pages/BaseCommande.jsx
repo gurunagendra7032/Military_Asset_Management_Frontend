@@ -10,7 +10,7 @@ export default function BaseCommander() {
 
     async function submit() {
         const response = await fetch(
-            "http://localhost:8080/base_commander/signup",
+            "https://military-asset-management-system-1-0ldl.onrender.com/base_commander/signup",
             {
                 method: "POST",
                 headers: {
@@ -29,7 +29,7 @@ export default function BaseCommander() {
     }
 
     useEffect(() => {
-        fetch("http://localhost:8080/get/bases")
+        fetch("https://military-asset-management-system-1-0ldl.onrender.com/get/bases")
             .then(response => response.json())
             .then(data => {
                 console.log(data);
