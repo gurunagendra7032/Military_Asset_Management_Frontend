@@ -9,7 +9,7 @@ export default function Adminsignup() {
     const navigate=useNavigate();
 
     async function submit(){
-         const response= fetch("https://militaryassetmanagementfrontend.vercel.app/admin/signup",{
+         const response= fetch("https://military-asset-management-system-1-0ldl.onrender.com/admin/signup",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
