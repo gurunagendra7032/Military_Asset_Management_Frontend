@@ -9,7 +9,7 @@ export default function Adminsignup() {
     const navigate=useNavigate();
 
     async function submit(){
-         const response= fetch("http://localhost:8080/admin/signup",{
+         const response= fetch("https://militaryassetmanagementfrontend.vercel.app/admin/signup",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
