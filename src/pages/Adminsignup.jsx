@@ -1,5 +1,7 @@
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Adminsignup.css';
 
 export default function Adminsignup() {
 
@@ -16,7 +18,7 @@ export default function Adminsignup() {
             const response = await fetch(
                 "https://military-asset-management-system-1-0ldl.onrender.com/admin/signup",
                 {
-                    method:"POST",
+                    method: "POST",
                     headers: {
                         "Content-Type": "application/json"
                     },
@@ -28,28 +30,26 @@ export default function Adminsignup() {
                 }
             );
 
-            console.log(response)
+            console.log(response);
 
             if (response.ok) {
-
                 navigate("/");
-
             } else {
-
                 const error = await response.text();
-
                 console.log("Admin not registered:", error);
             }
 
         } catch (error) {
-
             console.log("Signup error:", error);
         }
     }
 
     return (
-        <>
-            <div>
+        <div className="admin-signup-page">
+
+            <div className="admin-signup-card">
+
+                <h2>Admin Signup</h2>
 
                 <input
                     type="text"
@@ -70,10 +70,15 @@ export default function Adminsignup() {
                 />
 
                 <button onClick={submit}>
-                    Submit
+                    Create Admin Account
                 </button>
 
+                <p onClick={() => navigate("/")}>
+                    Already have an account? Login
+                </p>
+
             </div>
-        </>
+
+        </div>
     );
 }
