@@ -16,9 +16,11 @@ function Expenditure() {
 
     const [expenditures, setExpenditures] = useState([]);
 
+    const[message,setMessage]=useState("");
+
     async function submit() {
 
-        await fetch("https://military-asset-management-system-1-0ldl.onrender.com/save/expenditure", {
+       const response= await fetch("https://military-asset-management-system-1-0ldl.onrender.com/save/expenditure", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -32,6 +34,10 @@ function Expenditure() {
                 date: date
             }),
         });
+
+        if(reason.ok){
+            setMessage("assetes  expended");
+        }
 
         getExpenditures();
     }
@@ -108,6 +114,8 @@ function Expenditure() {
                 <button onClick={submit}>
                     Submit
                 </button>
+
+                {message && <p>{message}</p>}
 
             </div>
 

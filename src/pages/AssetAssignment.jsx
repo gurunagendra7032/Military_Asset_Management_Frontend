@@ -8,12 +8,13 @@ function ItemAssignment() {
   const[asset,setAsset]=useState("");
   const[quantity,setQuantity]=useState("");
   const[date,setDate]=useState("");
+  const[message,setMessage]=useState("");
 
   async function submit(){
 
     const token=localStorage.getItem("token");
 
-    await fetch("https://military-asset-management-system-1-0ldl.onrender.com/itemAssignment",{
+    const response=await fetch("https://military-asset-management-system-1-0ldl.onrender.com/itemAssignment",{
       method:"POST",
       headers:{
         "Content-Type":"application/json",
@@ -28,6 +29,10 @@ function ItemAssignment() {
       }),
 
     });
+
+    if(response.ok){
+      setMessage("assest assign successfully");
+    }
 
   }
 
@@ -65,6 +70,7 @@ function ItemAssignment() {
       <input type='number' placeholder="Enter Quantity" onChange={(e)=> setQuantity(e.target.value)}></input>
       <input type='date' placeholder='choose Date' onChange={(e)=> setDate(e.target.value)}></input>
       <button onClick={submit}> Submit </button>
+      {message && <p>{message}</p>}
     </div>
 
     <div>

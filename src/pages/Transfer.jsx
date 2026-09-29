@@ -17,11 +17,13 @@ function Transfer() {
     const [filterEquipmentType, setFilterEquipmentType] = useState("");
     const [filterDate, setFilterDate] = useState("");
 
+    const [message,setMessage]=useState("");
+
     async function submit() {
 
         const token = localStorage.getItem("token");
 
-        await fetch("https://military-asset-management-system-1-0ldl.onrender.com/transfer/save", {
+       const response= await fetch("https://military-asset-management-system-1-0ldl.onrender.com/transfer/save", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -38,6 +40,9 @@ function Transfer() {
             }),
         });
 
+        if(response.ok){
+            setMessage("assest Transfer Successfully");
+        }
         
         getTransfers();
     }
@@ -145,6 +150,8 @@ function Transfer() {
                 <button onClick={submit}>
                     Submit
                 </button>
+
+                {message && <p>{message}</p>}
 
             </div>
 

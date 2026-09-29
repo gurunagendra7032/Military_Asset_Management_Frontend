@@ -8,6 +8,8 @@ function Purchase() {
  const[quantity,setQuantity]=useState("");
  const[date,setDate]=useState("");
 
+ const [message, setMessage] = useState("");
+
   const [filterEquipmentType, setFilterEquipmentType] = useState("");
   const [filterDate, setFilterDate] = useState("");
 
@@ -15,7 +17,7 @@ function Purchase() {
    async function submit(){
 
        const token = localStorage.getItem("token");
-     await fetch("https://military-asset-management-system-1-0ldl.onrender.com/purchase/save",{
+    const response= await fetch("https://military-asset-management-system-1-0ldl.onrender.com/purchase/save",{
         method:"POST",
         headers:{
             "Content-Type":"application/json",
@@ -29,6 +31,10 @@ function Purchase() {
 
         }),
      });
+
+     if(response.ok){
+        setMessage("equipment SuccessFully Added")
+     }
    }
 
 
@@ -77,6 +83,7 @@ function Purchase() {
 
         <input type="date" className="date" onChange={(e)=>setDate(e.target.value)}/>
         <button type="button" onClick={submit}>Submit</button>
+        {message && <p>{message}</p>}
       </div>
 
 
