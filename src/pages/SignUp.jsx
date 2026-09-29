@@ -25,7 +25,7 @@ function SignUp() {
             })
         });
         if(response.ok){
-            navigate("/login");
+            navigate("/");
         }else{
             console.log("User not Register");
         }
