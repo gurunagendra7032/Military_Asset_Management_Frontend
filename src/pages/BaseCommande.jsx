@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './BaseCommander.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function BaseCommander() {
     const [name, setName] = useState("");
@@ -7,7 +8,7 @@ export default function BaseCommander() {
     const [password, setPassword] = useState("");
     const [bases, setBases] = useState([]);
     const [baseId, setBaseId] = useState("");
-
+    const navigate=useNavigate();
     async function submit() {
         const response = await fetch(
             "https://military-asset-management-system-1-0ldl.onrender.com/base_commander/signup",
@@ -24,6 +25,9 @@ export default function BaseCommander() {
                 })
             }
         );
+        if(response.ok){
+             navigate("/");
+        }
 
         console.log(response);
     }
