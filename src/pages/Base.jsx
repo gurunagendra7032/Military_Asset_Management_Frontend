@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import './Base.css'
-
+import { useNavigate } from 'react-router-dom';
 function Base() {
 
     const [name, setName] = useState("");
     const [location, setLocation] = useState("");
 
-    function submitDetails() {
-        fetch("https://military-asset-management-system-1-0ldl.onrender.com/save/base",{
+    const navigate=useNavigate();
+    async function submitDetails() {
+        const res=await fetch("https://military-asset-management-system-1-0ldl.onrender.com/save/base",{
           method:"POST",
           headers:{
             "Content-Type": "application/json",
@@ -18,7 +19,14 @@ function Base() {
             baseLocation:location
           })
         })
+        console.log(res);
+
+        if(res.ok){
+            navigate("/")
+        }
     }
+
+    console.log(res)
 
     return (
         <div className="base-container">
