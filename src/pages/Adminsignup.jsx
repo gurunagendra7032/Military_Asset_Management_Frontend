@@ -28,6 +28,8 @@ export default function Adminsignup() {
                 }
             );
 
+            console.log(response)
+
             if (response.ok) {
 
                 navigate("/login");
