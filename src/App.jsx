@@ -24,7 +24,7 @@ function App() {
       <Routes>
         <Route path="/base/signup" element={<BaseCommande/>}/>
         <Route path="/signup" element={<SignUp/>}/>
-        <Route path="/login" element={<Login/>}/>
+        <Route path="/" element={<Login/>}/>
         <Route path="/dashboard" element={<DashBoard/>}/>
         <Route path="logistic_officer" element={<Logistic_Officer/>}/>
         <Route path="/bases" element={<Base />} />
