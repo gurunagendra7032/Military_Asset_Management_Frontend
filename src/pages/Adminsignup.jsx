@@ -32,7 +32,7 @@ export default function Adminsignup() {
 
             if (response.ok) {
 
-                navigate("/login");
+                navigate("/");
 
             } else {
 
