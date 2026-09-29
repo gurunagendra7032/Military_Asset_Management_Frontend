@@ -7,7 +7,17 @@ function Base() {
     const [location, setLocation] = useState("");
 
     function submitDetails() {
-        console.log(name, location);
+        fetch("https://military-asset-management-system-1-0ldl.onrender.com/save/base",{
+          method:"POST",
+          headers:{
+            "Content-Type": "application/json",
+            "Autorization":`Bearer ${localStorage.getItem("token")}`
+          },
+          body:JSON.stringify({
+            baseName:name,
+            baseLocation:location
+          })
+        })
     }
 
     return (

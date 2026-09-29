@@ -29,7 +29,7 @@ function App() {
         <Route path="/" element={<Login/>}/>
         <Route path="/dashboard" element={<DashBoard/>}/>
         <Route path="logistic_officer" element={<Logistic_Officer/>}/>
-        <Route path="c" element={<Base />} />
+        <Route path="bases" element={<Base />} />
         <Route path="/purchase" element={<Purchase />} />
         <Route path="/transfer" element={<Transfer/>}/>
         <Route path="/itemAssign" element={<AssetAssignment/>}/>
